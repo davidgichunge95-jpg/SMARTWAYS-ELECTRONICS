@@ -1,0 +1,435 @@
+Here is the complete **Smartways Electronics website code in one page**. HTML, CSS, and JavaScript are combined into a single `index.html` file.
+
+```
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smartways Electronics</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5fa;
+    color: #222;
+}
+
+/* NAVIGATION BAR */
+header {
+    background: #160d16;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff69b4;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff69b4;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HOME */
+.hero {
+    min-height: 85vh;
+    background: linear-gradient(
+        rgba(30,0,20,.8),
+        rgba(80,0,40,.8)
+    ), url("https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1600")
+    center/cover;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff69b4;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #ff69b4;
+    color: #160d16;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #087bd5;
+    color: white;
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #65002d;
+    font-size: 35px;
+    margin-bottom: 35px;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about p {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* PRODUCTS */
+.products {
+    background: #f8e8f1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px #0002;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    color: #65002d;
+    margin: 15px;
+}
+
+.product-card p {
+    padding: 0 15px 20px;
+}
+
+/* SERVICES */
+.services {
+    background: #160d16;
+    color: white;
+}
+
+.services .section-title {
+    color: #ff69b4;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #65002d;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    background: #087bd5;
+}
+
+.service-card h3 {
+    color: #ffb6d9;
+    margin-bottom: 15px;
+}
+
+/* CONTACT */
+.contact {
+    background: white;
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    background: #160d16;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer span {
+    color: #ff69b4;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media(max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 12px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="logo">Smartways Electronics</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+</header>
+
+<!-- HOME PAGE -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Welcome to <span>Smartways Electronics</span></h1>
+        <p>
+            Your trusted destination for quality electronics.
+            Discover modern technology, affordable prices,
+            and excellent customer service.
+        </p>
+        <a href="#products" class="btn">Explore Products</a>
+    </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section class="about" id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+        Smartways Electronics is your reliable electronics shop,
+        dedicated to providing high-quality electronic products
+        at affordable prices. We believe in innovation, quality,
+        customer satisfaction and making modern technology
+        accessible to everyone.
+    </p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+    <h2 class="section-title">Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Smartphone">
+            <h3>Smartphones</h3>
+            <p>Modern smartphones and accessories.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600" alt="Laptop">
+            <h3>Laptops and Computers</h3>
+            <p>Powerful laptops for work and entertainment.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600" alt="Television">
+            <h3>Televisions</h3>
+            <p>Enjoy entertainment with quality displays.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600" alt="Headphones">
+            <h3>Audio Equipment</h3>
+            <p>Speakers, headphones and accessories.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES PAGE -->
+<section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <h3>Electronics Sales</h3>
+            <p>Quality electronics at competitive prices.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Repairs & Maintenance</h3>
+            <p>Reliable electronics repair and maintenance.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Technical Support</h3>
+            <p>Professional assistance with your devices.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Accessories</h3>
+            <p>Find quality accessories for your devices.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT US PAGE -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-container">
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <input type="tel" placeholder="Your Phone Number">
+            <textarea placeholder="Write your message here..." required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Smartways <span>Electronics</span></h3>
+    <p>Your Technology, Our Priority.</p>
+    <p>&copy; 2026 Smartways Electronics. All Rights Reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+    });
+});
+
+function sendMessage(event) {
+    event.preventDefault();
+    alert("Thank you for contacting Smartways Electronics!");
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
+
+```
+
+**Important:** Everything is in one file. You only need to create `index.html`, paste the code, save it, and open it in your browser.
