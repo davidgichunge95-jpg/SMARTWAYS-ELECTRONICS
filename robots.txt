@@ -1,0 +1,6 @@
+# SMARTWAYS ELECTRONICS
+# Location: Makutano, Meru, Kenya
+User-agent: *
+Allow: /
+# Sitemap location
+Sitemap: https://davidgichunge95-jpg.github.io/SMARTWAYS-ELECTRONICS/sitemap.xml
